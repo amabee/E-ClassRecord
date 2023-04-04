@@ -15,3 +15,10 @@ C:\Users\Sho\source\repos\E-ClassRecord\E-ClassRecord\obj\Debug\E-ClassRecord.cs
 C:\Users\Sho\source\repos\E-ClassRecord\E-ClassRecord\obj\Debug\E-ClassRecord.csproj.CoreCompileInputs.cache
 C:\Users\Sho\source\repos\E-ClassRecord\E-ClassRecord\obj\Debug\E-ClassRecord.exe
 C:\Users\Sho\source\repos\E-ClassRecord\E-ClassRecord\obj\Debug\E-ClassRecord.pdb
+C:\Users\Sho\source\repos\E-ClassRecord\E-ClassRecord\bin\Debug\BCrypt.Net-Core.dll
+C:\Users\Sho\source\repos\E-ClassRecord\E-ClassRecord\bin\Debug\DevOne.Security.Cryptography.BCrypt.dll
+C:\Users\Sho\source\repos\E-ClassRecord\E-ClassRecord\bin\Debug\BCrypt.Net-Core.pdb
+C:\Users\Sho\source\repos\E-ClassRecord\E-ClassRecord\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Sho\source\repos\E-ClassRecord\E-ClassRecord\obj\Debug\E-ClassRecord.csproj.CopyComplete
+C:\Users\Sho\source\repos\E-ClassRecord\E-ClassRecord\obj\Debug\CustomControls\BindablePasswordBox.g.cs
+C:\Users\Sho\source\repos\E-ClassRecord\E-ClassRecord\obj\Debug\CustomControls\BindablePasswordBox.baml

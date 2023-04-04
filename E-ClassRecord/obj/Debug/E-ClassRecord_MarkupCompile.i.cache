@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Sho\source\repos\E-ClassRecord\E-ClassRecord\App.xaml
-21071382330
+31315460323
 
-91790858721
-13-1505183044
-MainWindow.xaml;View\LoginPage.xaml;
+11-186659121
+15-1348001537
+CustomControls\BindablePasswordBox.xaml;MainWindow.xaml;View\LoginPage.xaml;
 
-False
+True
 
