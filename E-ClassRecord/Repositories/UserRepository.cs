@@ -21,7 +21,7 @@ namespace E_ClassRecord.Repositories
         public bool AuthenticateUser(NetworkCredential credential)
         {
             bool validUser;
-            using (var connection = GetConnection())
+            using (MySqlConnection connection = BaseRepository.connect)
             using (var cmd = new MySqlCommand())
             {
                 connection.Open();
