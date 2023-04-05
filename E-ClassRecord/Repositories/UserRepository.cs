@@ -2,11 +2,11 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
 
 
 namespace E_ClassRecord.Repositories
@@ -21,14 +21,13 @@ namespace E_ClassRecord.Repositories
         public bool AuthenticateUser(NetworkCredential credential)
         {
             bool validUser;
-            //using (var connection = GetConnection())
-            SqlConnection connection = GetConnection();
-            using (var cmd = new SqlCommand())
+            using (var connection = GetConnection())
+            using (var cmd = new MySqlCommand())
             {
                 connection.Open();
                 cmd.CommandText = "SELECT * FROM wccs_users WHERE username=@username AND [password]=@password";
-                cmd.Parameters.Add("@username", SqlDbType.NVarChar).Value=credential.UserName;
-                cmd.Parameters.Add("@password", SqlDbType.NVarChar).Value = credential.Password;
+                cmd.Parameters.Add("@username", MySqlDbType.VarChar).Value=credential.UserName;
+                cmd.Parameters.Add("@password", MySqlDbType.VarChar).Value = credential.Password;
                 validUser = cmd.ExecuteScalar() == null ? false : true;
             }
             return validUser;

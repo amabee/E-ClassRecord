@@ -3,26 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.SqlClient;
+using MySql.Data;
+using MySql.Data.MySqlClient;
+
 namespace E_ClassRecord.Repositories
 {
     public abstract class BaseRepository
     {
         private readonly string _connectionString;
-        private readonly string server = "localhost";
-        private readonly string database = "wccsdb";
-        private readonly string uid = "root";
-        private readonly string password = "";
+
         public BaseRepository()
         {
 
-         _connectionString = "SERVER=" + server + ";" + "DATABASE=" +
-            database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
-        
+         _connectionString = "server=localhost;Port=3306;uid=root;password=;database=wccs";
+
         }
-        protected SqlConnection GetConnection()
+        protected MySqlConnection GetConnection()
         {
-            return new SqlConnection(_connectionString);
+            return new MySqlConnection(_connectionString);
         }
     }
 }
