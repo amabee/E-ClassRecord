@@ -7,6 +7,11 @@ using System.Security;
 using BCrypt.Net;
 using System.Runtime.InteropServices;
 using System.Windows.Input;
+using E_ClassRecord.Model;
+using E_ClassRecord.Repositories;
+using System.Net;
+using System.Threading;
+using System.Security.Principal;
 
 namespace E_ClassRecord.ViewModel
 {
@@ -21,6 +26,7 @@ namespace E_ClassRecord.ViewModel
         private String _errorMessage;
         private bool _isViewVisible = true;
 
+        private IUserRepos userRepos;
         public String Username
         {
             get
@@ -118,6 +124,7 @@ namespace E_ClassRecord.ViewModel
 
         public LoginViewModel()
         {
+            userRepos = new UserRepository();
             LoginCommand = new ViewModelCommand(ExecuteLoginCommand, CanExecuteLoginCommand);
             RecoverPassword = new ViewModelCommand(rec => ExecuteRecoverPassword("",""));
         }
@@ -138,7 +145,17 @@ namespace E_ClassRecord.ViewModel
 
         private void ExecuteLoginCommand(object obj)
         {
-            throw new NotImplementedException();
+            var isValidUser = userRepos.AuthenticateUser(new NetworkCredential(Username,Password));
+
+            if (isValidUser)
+            {
+                Thread.CurrentPrincipal = new GenericPrincipal(new GenericIdentity(Username), null);
+                IsViewVisible = false;
+            }
+            else
+            {
+                ErrorMessage = "* Invalid Credentials!";
+            }
         }
 
         private void ExecuteRecoverPassword(String username, String email)
